@@ -1,4 +1,4 @@
-## Flask_Prime_Challenge
+# Flask_Prime_Challenge
 The application is for client to polls the server to get the results of calculating prime number between the start and end number. The results are cached in Redis. 
 
 ## The Basics
