@@ -27,7 +27,7 @@ $ cd Flask_Challenge
 $ run python server.py
 ```
 
-* Go to http://127.0.0.1:5000/ and put HTTP endpoint as **/get_ prime** 
+* Set HTTP endpoint as **/get_ prime** : Go to http://127.0.0.1:5000//get_prime  
 * Set the parameters following the format :
 **start=a&end=b**, which a and b represent your start and end number seperately. 
 
@@ -40,7 +40,7 @@ $ http://127.0.0.1:5000/get_prime?start=2&end=2000000
 * If you fail to put the right parameter that is requested, the server will return message **error: not get start or end parameters**
 
 ### Use the unique ID to see the result of the task:
-* HTTP endpoint as **/get_result** : Go http://127.0.0.1:5000/get_result
+* Set HTTP endpoint as **/get_result** : Go http://127.0.0.1:5000/get_result
 * Set the unique ID following the format :
 **id=c**, which c represents the unique ID you got from above.
 
