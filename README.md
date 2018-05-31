@@ -54,6 +54,27 @@ The request will return the unique ID and the list of the requested prime number
 ```
 $ run python testing.py
 ```
+The testing.py are like this :
 
+```
+import unittest
+import requests
+
+class TestStringMethods(unittest.TestCase):
+
+    def test_get_prime_success(self):
+        r = requests.get('http://127.0.0.1:5000/get_prime?start=2&end=1000')
+        self.assertEqual(r.status_code, 200)
+
+    def test_get_prime_fail(self):
+        r = requests.get('http://localhost:5000/get_prime')
+        self.assertEqual(r.status_code, 500)
+        self.assertEqual(r.text, 'error: not get start or end parameters')
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+We can test our request here to see if we get the result we want.
 
 
