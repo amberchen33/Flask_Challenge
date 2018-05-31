@@ -1,7 +1,7 @@
-### Flask_Prime_Challenge
+# Flask_Prime_Challenge
 The application is for client to polls the server to get the results of calculating prime number between the start and end number. The results are cached in Redis. 
 
-### Prerequisites
+# Prerequisites
 
 Download, extract and compile Redis with:
 
@@ -11,7 +11,7 @@ $ cd redis-4.0.9
 $ make
 ```
 
-### The binaries that are now compiled are available in the src directory. Run Redis with:
+# The binaries that are now compiled are available in the src directory. Run Redis with:
 
 ```
 $ src/redis-server
@@ -25,10 +25,12 @@ git clone https://github.com/amberchen33/Flask_Challenge.git
 cd Flask_Challenge
 run python server.py
 ```
-go to http://127.0.0.1:5000/get_prime? and set the start and end number follow the format like
+go to http://127.0.0.1:5000/ and put HTTP endpoint as /get_ prime
+set the parameters following the format :
 start=a&end=b, which a and b represent your start and end number seperately. 
 
-For example
+For example, we want to have prime number between 2 and 2000,000
 ```
 http://127.0.0.1:5000/get_prime?start=2&end=2000000
 ```
+The request will return unigque ID for the task
