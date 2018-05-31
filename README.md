@@ -27,6 +27,8 @@ $ cd Flask_Challenge
 $ run python server.py
 ```
 ## Features
+
+### calculating and returning a list of prime numbers
 * Set HTTP endpoint as **/get_ prime** : Go to http://127.0.0.1:5000/get_prime  
 * Set the parameters following the format :
 **start=a&end=b**, which a and b represent your start and end number seperately. 
@@ -54,7 +56,7 @@ The request will return the unique ID and the list of the requested prime number
 ```
 $ run python testing.py
 ```
-The testing.py are like this :
+The testing.py looks like this :
 
 ```
 import unittest
