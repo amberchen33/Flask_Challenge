@@ -76,5 +76,6 @@ if __name__ == '__main__':
 ```
 
 We can test our request here to see if we get the result we want.
+If the request we set matches then you will get OK, otherwise you will get FAILED.
 
 
