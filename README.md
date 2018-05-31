@@ -36,8 +36,8 @@ run python server.py
 http://127.0.0.1:5000/get_prime?start=2&end=2000000
 ```
 
-The request will return unigque ID for the task, which is determined by the date and time you send the request.
-If you fail to put the right parameter that is requested, the server will return message **error: not get start or end parameters**
+* The request will return unigque ID for the task, which is determined by the date and time you send the request.
+* If you fail to put the right parameter that is requested, the server will return message **error: not get start or end parameters**
 
 ### Use the unique ID to see the result of the task:
 * go http://127.0.0.1:5000/ and put HTTP endpoint as **/get_result** 
