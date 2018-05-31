@@ -28,7 +28,7 @@ $ run python server.py
 ```
 ## Features
 
-### calculating and returning a list of prime numbers
+### Calculating prime numbers and returning a unique ID
 * Set HTTP endpoint as **/get_ prime** : Go to http://127.0.0.1:5000/get_prime  
 * Set the parameters following the format :
 **start=a&end=b**, which a and b represent your start and end number seperately. 
