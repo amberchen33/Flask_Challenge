@@ -39,7 +39,8 @@ http://127.0.0.1:5000/get_prime?start=2&end=2000000
 The request will return unigque ID for the task, which is determined by the date and time you send the request.
 
 ### Use the unique ID to see the result of the task:
-* go http://127.0.0.1:5000/ and put HTTP endpoint as **/get_result** and set the unique ID following the format :
+* go http://127.0.0.1:5000/ and put HTTP endpoint as **/get_result** 
+* set the unique ID following the format :
 **id=c**, which c represents the unique ID you got from above.
 
 * A great example looks will like this:
