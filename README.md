@@ -51,6 +51,9 @@ http://127.0.0.1:5000/get_result?id=20180531120444
 The request will return the unique ID and the list of the requested prime number.
 
 ## Unit Test
+```
+run python testing.py
+```
 
 
 
