@@ -1,6 +1,70 @@
 ## Flask_Prime_Challenge
 The application is for client to polls the server to get the results of calculating prime number between the start and end number. The results are cached in Redis. 
 
+## The Basics
+
+A Flask application looks like this:
+```
+from flask import Flask, request
+import datetime
+import _thread
+import time
+import redis
+import math
+app = Flask(__name__)
+
+inputs = {}
+
+def isPrime(num):
+    if num == 1:
+        return 0
+    for i in range(2, int(math.sqrt(num))+1):
+        if num % i == 0:
+            return 0
+    return 1
+    
+def Threadfun(id, start, end):
+    ans=[]
+    for i in range(int(start), int(end) +1):
+       if isPrime(i):
+           ans.append(i) 
+    
+    r = redis.Redis(host='localhost', port=6379, decode_responses=True)  # Redis runs on the port 6379 
+    print(id, ans)
+    r.set(id, ans)
+    return
+
+@app.route("/get_prime")
+def get_prime():
+    start = request.values.get('start')
+    end = request.values.get('end')
+    if not start or not end:
+        return ('error: not get start or end parameters', 500)
+    id = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    inputs[id] = [start, end, []]
+    r = redis.Redis(host='localhost', port=6379, decode_responses=True)   
+    r.set(id, [])
+    _thread.start_new_thread(Threadfun, (id, start, end))
+   
+    return "%s" % (id)
+
+@app.route("/get_result")
+def get_result():
+    id = request.values.get('id')
+    r = redis.Redis(host='localhost', port=6379, decode_responses=True)   
+    return "%s, %s" % (id, r.get(id))
+
+if __name__ == '__main__':
+    app.run()
+```
+
+In the code above:
+1. The ```isPrime``` function is used to tell if the number is a prime number.
+2. The ```Threadfun``` function conducts the calculation since we want to run multiple tasks simultaneously while generate a unique ID.
+3. The ```app.route``` decorator maps /get_prime to a view function get_prime.
+4. The ```app.route``` decorator maps /get_result to a view function get_result.
+5. Lastly, a builder constructs a spoken response and displays results in the Flask app.
+
 ## Prerequisites
 
 Download, extract and compile Redis with:
@@ -80,66 +144,3 @@ if __name__ == '__main__':
 We can test our request here to see if we get the result we want.
 If the request we set matches then you will get OK, otherwise you will get FAILED.
 
-## The Basics
-
-A Flask application looks like this:
-```
-from flask import Flask, request
-import datetime
-import _thread
-import time
-import redis
-import math
-app = Flask(__name__)
-
-inputs = {}
-
-def isPrime(num):
-    if num == 1:
-        return 0
-    for i in range(2, int(math.sqrt(num))+1):
-        if num % i == 0:
-            return 0
-    return 1
-    
-def Threadfun(id, start, end):
-    ans=[]
-    for i in range(int(start), int(end) +1):
-       if isPrime(i):
-           ans.append(i) 
-    
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)  # Redis runs on the port 6379 
-    print(id, ans)
-    r.set(id, ans)
-    return
-
-@app.route("/get_prime")
-def get_prime():
-    start = request.values.get('start')
-    end = request.values.get('end')
-    if not start or not end:
-        return ('error: not get start or end parameters', 500)
-    id = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    inputs[id] = [start, end, []]
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)   
-    r.set(id, [])
-    _thread.start_new_thread(Threadfun, (id, start, end))
-   
-    return "%s" % (id)
-
-@app.route("/get_result")
-def get_result():
-    id = request.values.get('id')
-    r = redis.Redis(host='localhost', port=6379, decode_responses=True)   
-    return "%s, %s" % (id, r.get(id))
-
-if __name__ == '__main__':
-    app.run()
-```
-
-In the code above:
-1. The ```isPrime``` function is used to tell if the number is a prime number.
-2. The ```Threadfun``` function conducts the calculation since we want to run multiple tasks simultaneously while generate a unique ID.
-3. The ```app.route``` decorator maps /get_prime to a view function get_prime.
-4. The ```app.route``` decorator maps /get_result to a view function get_result.
-5. Lastly, a builder constructs a spoken response and displays results in the Flask app.
