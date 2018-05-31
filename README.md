@@ -16,10 +16,9 @@ $ make
 ```
 $ src/redis-server
 ```
+or follow the instruction here:
+https://redis.io/download
 
-```
-Give examples
-```
 # Install instructions
 git clone git@github.com:searchkit/searchkit-starter-app.git
 cd searchkit-starter-app
