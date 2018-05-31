@@ -11,7 +11,7 @@ $ cd redis-4.0.9
 $ make
 ```
 
-###The binaries that are now compiled are available in the src directory. Run Redis with:
+### The binaries that are now compiled are available in the src directory. Run Redis with:
 
 ```
 $ src/redis-server
