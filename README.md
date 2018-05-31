@@ -97,7 +97,7 @@ $ run python server.py
 * Set the parameters following the format :
 **start=a&end=b**, which a and b represent your start and end number seperately. 
 * Go to http://127.0.0.1:5000/get_prime?start=a&start=b  
-* For example, we want to have prime numbers between 2 and 2000,000
+* For example, we want to have prime numbers between 2 and 2000,000, the link will look like:
 ```
 $ http://127.0.0.1:5000/get_prime?start=2&end=2000000
 ```
@@ -109,7 +109,7 @@ $ http://127.0.0.1:5000/get_prime?start=2&end=2000000
 * Set HTTP endpoint as **/get_result** 
 * Set the unique ID following the format :
 **id=c**, which c represents the unique ID you got from above.
-* Go http://127.0.0.1:5000/get_result?id=c
+* Go to http://127.0.0.1:5000/get_result?id=c
 
 * A great example looks will like this:
 ```
