@@ -138,7 +138,7 @@ if __name__ == '__main__':
 ```
 
 In the code above:
-1. The <table><tr><td bgcolor=#A9A9A9>isPrime</table> function is used to tell if the number is a prime number.
+1. The <td bgcolor=#A9A9A9>isPrime</td> function is used to tell if the number is a prime number.
 2. The Threadfun function conducts the calculation since we want to run multiple tasks simultaneously while generate a unique ID.
 3. The app.route decorator maps /get_prime to a view function get_prime.
 4. The app.route decorator maps /get_result to a view function get_result.
