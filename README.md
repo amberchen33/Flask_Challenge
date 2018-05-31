@@ -138,8 +138,8 @@ if __name__ == '__main__':
 ```
 
 In the code above:
-The isPrime function is used to tell if the number is a prime number.
-The Threadfun function conducts the calculation since we want to run multiple tasks simultaneously while generate a unique ID.
-The app.route decorator maps /get_prime to a view function get_prime.
-The app.route decorator maps /get_result to a view function get_result.
-Lastly, a builder constructs a spoken response and displays results in the Flask app.
+1. The isPrime function is used to tell if the number is a prime number.
+2. The Threadfun function conducts the calculation since we want to run multiple tasks simultaneously while generate a unique ID.
+3. The app.route decorator maps /get_prime to a view function get_prime.
+4. The app.route decorator maps /get_result to a view function get_result.
+5. Lastly, a builder constructs a spoken response and displays results in the Flask app.
