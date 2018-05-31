@@ -25,6 +25,7 @@ git clone https://github.com/amberchen33/Flask_Challenge.git
 cd Flask_Challenge
 run python server.py
 ```
+
 go to http://127.0.0.1:5000/ and put HTTP endpoint as **/get_ prime** and set the parameters following the format :
 **start=a&end=b**, which a and b represent your start and end number seperately. 
 
@@ -32,6 +33,7 @@ For example, we want to have prime number between 2 and 2000,000
 ```
 http://127.0.0.1:5000/get_prime?start=2&end=2000000
 ```
+
 The request will return unigque ID for the task, which is determined by the date and time you send the request.
 
 ### Use the unique ID to see the result of the task:
