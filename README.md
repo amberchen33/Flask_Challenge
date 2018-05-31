@@ -31,13 +31,13 @@ $ run python server.py
 * Set the parameters following the format :
 **start=a&end=b**, which a and b represent your start and end number seperately. 
 
-* For example, we want to have prime number between 2 and 2000,000
+* For example, we want to have prime numbers between 2 and 2000,000
 ```
 $ http://127.0.0.1:5000/get_prime?start=2&end=2000000
 ```
 
-* The request will return unigque ID for the task, which is determined by the date and time you send the request.
-* If you fail to put the right parameter that is requested, the server will return message **error: not get start or end parameters**
+* The request will return unique ID for the task, which is determined by the date and time you send the request.
+* If you fail to put the right parameters that are requested, the server will return message **error: not get start or end parameters**
 
 ### Use the unique ID to see the result of the task:
 * Set HTTP endpoint as **/get_result** : Go http://127.0.0.1:5000/get_result
