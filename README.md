@@ -20,7 +20,15 @@ or follow the instruction here:
 https://redis.io/download
 
 # Install instructions
-git clone git@github.com:searchkit/searchkit-starter-app.git
-cd searchkit-starter-app
-yarn
-npm start
+```
+git clone https://github.com/amberchen33/Flask_Challenge.git
+cd Flask_Challenge
+run python server.py
+```
+go to http://127.0.0.1:5000/get_prime? and set the start and end number follow the format like
+start=a&end=b, which a and b represent your start and end number seperately. 
+
+For example
+```
+http://127.0.0.1:5000/get_prime?start=2&end=2000000
+```
