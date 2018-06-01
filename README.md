@@ -88,7 +88,7 @@ https://redis.io/download
 ```
 $ git clone https://github.com/amberchen33/Flask_Challenge.git
 $ cd Flask_Challenge
-$ run python server.py
+$ python server.py
 ```
 ## Features
 
