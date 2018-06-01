@@ -119,7 +119,7 @@ The request will return the unique ID and the list of the requested prime number
 
 ### Unit Tests
 ```
-$ run python testing.py
+$ python testing.py
 ```
 The testing.py looks like this :
 
